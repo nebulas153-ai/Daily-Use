@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+         .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .zero, .add, .subtract{
+            width: 75px;
+            height: 75px;
+            font-size: 30px;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+            background: linear-gradient(to right, #2672ff, #f34747);
+           border: 2px black solid;
+              
+        }
+          .multiply, .divide, .equal, .clear {
+              width: 75px;
+              height: 75px;
+              font-size: 30px;
+              margin: 5px;
+              border-radius: 5px;
+              text-align: center;
+              background: linear-gradient(to right, #2672ff, #f34747);
+              margin-left: 20px;
+              text-shadow: 2px 2px 4px #000000;
+              border: 2px black solid;
+          }
+        
+          .container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin-top: 50px;
+              background: linear-gradient(to right, #423f3f, #121314);       }
+             
+           body {
+             background: linear-gradient(to right, #423f3f, #121314);
+
+        }
+          button:hover {
+             transform: scale(1.1);
+             
+         }
+         .ans{
+              font-size: 30px;
+              color: white;
+              text-align: center;
+              margin-top: 20px;
+              text-shadow: 2px 2px 4px #000000;
+
+         }
+         .answer{
+              width: 400px;
+              height: 50px;
+              background: linear-gradient(to right, #2672ff, #f34747);
+              border-radius: 5px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 0 auto;
+              border: 2px black solid;
+         }
+    </style>
+</head>
+<body> 
+  <div class="answer">
+  <p id="display" class="ans"> Enter Expression </p>
+  </div>
+  <div class="container">
+  <div>
+  <button class="one" > 1</button>
+  <button class="two"> 2</button>
+  <button class="three"> 3</button>
+  <button class="multiply"> X </button>
+  </div>
+  <div>
+  <button class="four" > 4</button>
+  <button class="five"> 5</button>
+  <button class="six"> 6</button>
+  <button class="divide"> / </button>
+  </div>
+  <div>
+  <button class="seven"> 7</button>
+  <button class="eight"> 8</button>
+  <button class="nine"> 9</button>
+  <button class="equal"> = </button>
+  </div>
+  <div>
+  
+  <button class="add"> + </button>
+  <button class="zero"> 0</button>
+  <button class="subtract"> - </button>
+  <button class="clear"> C</button>
+  </div>
+  <div class="container"></div>
+
+
+</body>
+</html>
