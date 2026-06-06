@@ -62,41 +62,82 @@
               align-items: center;
               margin: 0 auto;
               border: 2px black solid;
+              margin-top: 50px;
          }
+         .head{
+          color: white;
+          text-align: center;
+          text-shadow: 2px 2px 4px #000000;
+          text-decoration: underline;
+          border: 2px solid black;
+         }
+
     </style>
 </head>
 <body> 
+     <div class="head">
+     <h1> Simple Calculator</h1>
+     </div>
   <div class="answer">
-  <p id="display" class="ans"> Enter Expression </p>
+  <p  type="text" id="display" class="ans"> Enter Expression </p>
   </div>
   <div class="container">
   <div>
-  <button class="one" > 1</button>
-  <button class="two"> 2</button>
-  <button class="three"> 3</button>
-  <button class="multiply"> X </button>
+  <button onclick="press('1')" class="one" > 1</button>
+  <button onclick="press('2')" class="two"> 2</button>
+  <button onclick="press('3')" class="three"> 3</button>
+  <button onclick="press('*')"      class="multiply"> X </button>
   </div>
   <div>
-  <button class="four" > 4</button>
-  <button class="five"> 5</button>
-  <button class="six"> 6</button>
-  <button class="divide"> / </button>
+  <button onclick="press('4')" class="four" > 4</button>
+  <button onclick="press('5')" class="five"> 5</button>
+  <button onclick="press('6')" class="six"> 6</button>
+  <button onclick="press('/')" class="divide"> / </button>
   </div>
   <div>
-  <button class="seven"> 7</button>
-  <button class="eight"> 8</button>
-  <button class="nine"> 9</button>
-  <button class="equal"> = </button>
+  <button onclick="press('7')" class="seven"> 7</button>
+  <button onclick="press('8')" class="eight"> 8</button>
+  <button onclick="press('9')" class="nine"> 9</button>
+  <button onclick="calculate('=')" class="equal"> = </button>
   </div>
   <div>
   
-  <button class="add"> + </button>
-  <button class="zero"> 0</button>
-  <button class="subtract"> - </button>
-  <button class="clear"> C</button>
+  <button onclick="press('+')" class="add"> + </button>
+  <button onclick="press('0')" class="zero"> 0</button>
+  <button onclick="press('-')" class="subtract"> - </button>
+  <button onclick="clearDisplay()" class="clear"> C</button>
   </div>
   <div class="container"></div>
+  <script>
+    let expression = '';
 
+    document.getElementById("display").innerText = expression;
+
+    function press(num) {
+        expression += num;
+
+        document.getElementById('display').innerText = expression;
+    }
+
+    function calculate() {
+        try {
+            expression = eval(expression);
+
+            document.getElementById("display").innerText = expression;
+        }
+
+        catch {
+            document.getElementById("display").innerText = "Error";
+            expression = '';
+        }
+    }
+
+    function clearDisplay() {
+        expression = '';
+
+        document.getElementById('display').innerText = 'Enter Expression';
+    }
+</script>
 
 </body>
 </html>
