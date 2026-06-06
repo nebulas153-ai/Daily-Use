@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TO-DO List</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:linear-gradient(to bottom right,#000000,#1b0033,#000000);
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .container{
+      width:400px;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(10px);
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0px 0px 20px rgba(128,0,255,0.4);
+      text-align:center;
+    }
+
+    .title{
+      color:white;
+      font-size:40px;
+      margin-bottom:10px;
+      text-shadow:2px 2px 5px black;
+    }
+
+    .subtitle{
+      color:#d6c7ff;
+      margin-bottom:30px;
+      font-size:18px;
+    }
+
+    .input-area{
+      display:flex;
+      gap:10px;
+      margin-bottom:20px;
+    }
+
+    #taskInput{
+      flex:1;
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      outline:none;
+      font-size:16px;
+      background:#f1f1f1;
+    }
+
+    #addBtn{
+      width:60px;
+      border:none;
+      border-radius:10px;
+      background:purple;
+      color:white;
+      font-size:35px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    #addBtn:hover{
+      transform:scale(1.1);
+      background:rgb(170, 0, 255);
+    }
+
+    ul{
+      list-style:none;
+    }
+
+    li{
+      background:white;
+      color:black;
+      padding:15px;
+      border-radius:10px;
+      margin-top:10px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      animation:appear 0.3s ease;
+    }
+
+    .deleteBtn{
+      background:red;
+      color:white;
+      border:none;
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .deleteBtn:hover{
+      transform:scale(1.1);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1 class="title">YOU CAN DO IT!</h1>
+    <p class="subtitle">Plan your tasks and stay productive 🚀</p>
+
+    <div class="input-area">
+      <input type="text" id="taskInput" placeholder="Enter your task">
+
+      <button id="addBtn" onclick="addTask()">
+        +
+      </button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+  </div>
+
+  <script>
+
+    function addTask(){
+
+      let input = document.getElementById("taskInput");
+
+      let task = input.value;
+
+      if(task === ""){
+        alert("Please enter a task");
+        return;
+      }
+
+      let li = document.createElement("li");
+
+      li.innerHTML = `
+        ${task}
+        <button class="deleteBtn" onclick="deleteTask(this)">
+          Delete
+        </button>
+      `;
+
+      document.getElementById("taskList").appendChild(li);
+
+      input.value = "";
+    }
+
+    function deleteTask(button){
+      button.parentElement.remove();
+    }
+
+  </script>
+
+</body>
+</html>
