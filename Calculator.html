@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+
     <style>
+
          .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .zero, .add, .subtract{
             width: 75px;
             height: 75px;
@@ -13,130 +15,161 @@
             border-radius: 5px;
             text-align: center;
             background: linear-gradient(to right, #2672ff, #f34747);
-           border: 2px black solid;
-              
+            border: 2px black solid;
         }
-          .multiply, .divide, .equal, .clear {
-              width: 75px;
-              height: 75px;
-              font-size: 30px;
-              margin: 5px;
-              border-radius: 5px;
-              text-align: center;
-              background: linear-gradient(to right, #2672ff, #f34747);
-              margin-left: 20px;
-              text-shadow: 2px 2px 4px #000000;
-              border: 2px black solid;
-          }
-        
-          .container {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              margin-top: 50px;
-              background: linear-gradient(to right, #423f3f, #121314);       }
-             
-           body {
-             background: linear-gradient(to right, #423f3f, #121314);
 
+        .multiply, .divide, .equal, .clear{
+            width: 75px;
+            height: 75px;
+            font-size: 30px;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+            background: linear-gradient(to right, #2672ff, #f34747);
+            margin-left: 20px;
+            text-shadow: 2px 2px 4px #000000;
+            border: 2px black solid;
         }
-          button:hover {
-             transform: scale(1.1);
-             
-         }
-         .ans{
-              font-size: 30px;
-              color: white;
-              text-align: center;
-              margin-top: 20px;
-              text-shadow: 2px 2px 4px #000000;
 
-         }
-         .answer{
-              width: 400px;
-              height: 50px;
-              background: linear-gradient(to right, #2672ff, #f34747);
-              border-radius: 5px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              margin: 0 auto;
-              border: 2px black solid;
-              margin-top: 50px;
-         }
-         .head{
-          color: white;
-          text-align: center;
-          text-shadow: 2px 2px 4px #000000;
-          text-decoration: underline;
-          border: 2px solid black;
-         }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        body{
+        background:
+        radial-gradient(circle at top left, rgba(106,0,255,0.6), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(255,0,106,0.6), transparent 40%),
+        #050505;
+
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        button:hover{
+            transform: scale(1.1);
+        }
+
+        .ans{
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .answer{
+            width: 400px;
+            height: 50px;
+            background: linear-gradient(to right, #2672ff, #f34747);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            border: 2px black solid;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .head{
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px #000000;
+            text-decoration: underline;
+            position: relative;
+            z-index: 1;
+        }
 
     </style>
 </head>
-<body> 
+
+<body>
+
      <div class="head">
-     <h1> Simple Calculator</h1>
+        <h1>Simple Calculator</h1>
      </div>
-  <div class="answer">
-  <p  type="text" id="display" class="ans"> Enter Expression </p>
-  </div>
-  <div class="container">
-  <div>
-  <button onclick="press('1')" class="one" > 1</button>
-  <button onclick="press('2')" class="two"> 2</button>
-  <button onclick="press('3')" class="three"> 3</button>
-  <button onclick="press('*')"      class="multiply"> X </button>
-  </div>
-  <div>
-  <button onclick="press('4')" class="four" > 4</button>
-  <button onclick="press('5')" class="five"> 5</button>
-  <button onclick="press('6')" class="six"> 6</button>
-  <button onclick="press('/')" class="divide"> / </button>
-  </div>
-  <div>
-  <button onclick="press('7')" class="seven"> 7</button>
-  <button onclick="press('8')" class="eight"> 8</button>
-  <button onclick="press('9')" class="nine"> 9</button>
-  <button onclick="calculate('=')" class="equal"> = </button>
-  </div>
-  <div>
-  
-  <button onclick="press('+')" class="add"> + </button>
-  <button onclick="press('0')" class="zero"> 0</button>
-  <button onclick="press('-')" class="subtract"> - </button>
-  <button onclick="clearDisplay()" class="clear"> C</button>
-  </div>
-  <div class="container"></div>
-  <script>
-    let expression = '';
 
-    document.getElementById("display").innerText = expression;
+    <div class="answer">
+        <p type="text" id="display" class="ans">Enter Expression</p>
+    </div>
 
-    function press(num) {
-        expression += num;
+    <div class="container">
 
-        document.getElementById('display').innerText = expression;
+        <div>
+            <button onclick="press('1')" class="one">1</button>
+            <button onclick="press('2')" class="two">2</button>
+            <button onclick="press('3')" class="three">3</button>
+            <button onclick="press('*')" class="multiply">X</button>
+        </div>
+
+        <div>
+            <button onclick="press('4')" class="four">4</button>
+            <button onclick="press('5')" class="five">5</button>
+            <button onclick="press('6')" class="six">6</button>
+            <button onclick="press('/')" class="divide">/</button>
+        </div>
+
+        <div>
+            <button onclick="press('7')" class="seven">7</button>
+            <button onclick="press('8')" class="eight">8</button>
+            <button onclick="press('9')" class="nine">9</button>
+            <button onclick="calculate('=')" class="equal">=</button>
+        </div>
+
+        <div>
+
+            <button onclick="press('+')" class="add">+</button>
+            <button onclick="press('0')" class="zero">0</button>
+            <button onclick="press('-')" class="subtract">-</button>
+            <button onclick="clearDisplay()" class="clear">C</button>
+
+        </div>
+
+    </div>
+
+<script>
+
+let expression = '';
+
+document.getElementById("display").innerText = expression;
+
+function press(num){
+
+    expression += num;
+
+    document.getElementById('display').innerText = expression;
+}
+
+function calculate(){
+
+    try{
+
+        expression = eval(expression);
+
+        document.getElementById("display").innerText = expression;
     }
 
-    function calculate() {
-        try {
-            expression = eval(expression);
+    catch{
 
-            document.getElementById("display").innerText = expression;
-        }
-
-        catch {
-            document.getElementById("display").innerText = "Error";
-            expression = '';
-        }
-    }
-
-    function clearDisplay() {
+        document.getElementById("display").innerText = "Error";
         expression = '';
-
-        document.getElementById('display').innerText = 'Enter Expression';
     }
+}
+
+function clearDisplay(){
+
+    expression = '';
+
+    document.getElementById('display').innerText = 'Enter Expression';
+}
+
 </script>
 
 </body>

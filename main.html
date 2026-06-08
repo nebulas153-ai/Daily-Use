@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily-Use</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      background:
+      radial-gradient(circle at top left,#1b0030,#000000 40%),
+      radial-gradient(circle at bottom right,#220011,#000000 40%);
+
+      color:white;
+    }
+
+    .welcome{
+      font-size:55px;
+      font-weight:bold;
+      margin-bottom:60px;
+
+      text-shadow:
+      0 0 10px rgba(255,255,255,0.2),
+      0 0 20px rgba(255,0,111,0.3);
+    }
+
+    .tools{
+      display:flex;
+      gap:25px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .tool-btn{
+      text-decoration:none;
+      color:white;
+
+      padding:16px 32px;
+      border-radius:18px;
+
+      font-size:18px;
+      font-weight:bold;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.15);
+
+      backdrop-filter:blur(12px);
+
+      transition:0.35s ease;
+
+      box-shadow:
+      0 8px 25px rgba(0,0,0,0.35),
+      0 0 20px rgba(162,0,255,0.15);
+    }
+
+    .tool-btn:hover{
+      transform:translateY(-5px) scale(1.04);
+
+      background:linear-gradient(135deg,#a200ff,#ff0077);
+
+      box-shadow:
+      0 15px 35px rgba(162,0,255,0.4),
+      0 0 30px rgba(255,0,119,0.5);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1 class="welcome">Welcome to Daily-Use Tools</h1>
+
+  <div class="tools">
+
+    <a class="tool-btn" href="Calculator.html">
+      Simple Calculator
+    </a>
+
+    <a class="tool-btn" href="to-do.html">
+      To-Do List
+    </a>
+
+  </div>
+
+</body>
+</html>
